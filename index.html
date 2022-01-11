@@ -234,8 +234,8 @@ body, html {
             <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
           </div>
         </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <button class="w3-button w3-black w3-right w3-section" type="submit">
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message" id="mailMessage">
+        <button class="w3-button w3-black w3-right w3-section" type="submit" onclick="sendMail();">
           <i class="fa fa-paper-plane"></i>SEND MESSAGE
         </button>
       </form>
@@ -285,6 +285,17 @@ function toggleFunction() {
     } else {
         x.className = x.className.replace(" w3-show", "");
     }
+}
+
+
+function sendMail() {
+    var link = "mailto:anton-kraus@anton-kraus.de"
+       /*      + "?cc=myCCaddress@example.com"*/
+             + "&subject=" + encodeURIComponent("Contact from Website")
+             + "&body=" + encodeURIComponent(document.getElementById('mailMessage').value)
+    ;
+    
+    window.location.href = link;
 }
 </script>
 
