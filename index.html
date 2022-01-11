@@ -317,9 +317,7 @@ function sendMail() {
     var link = "mailto:anton-kraus@anton-kraus.de"
        /*      + "?cc=myCCaddress@example.com"*/
              + "&subject=" + encodeURIComponent("Contact from " + mailName)
-             + "&body=" + encodeURIComponent(document.getElementById("mailMessage").value)
-    ;
-    
+             + "&body=" + encodeURIComponent(document.getElementById("mailMessage").value);
     window.location.href = link;
 }
 </script>
